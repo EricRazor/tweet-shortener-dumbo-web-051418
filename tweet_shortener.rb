@@ -21,10 +21,43 @@ def word_substituter(str)   #
     #switch which ever words are identical i nthe keys then return the value
     if dictionary.keys.include?(word.downcase) #bool
       dictionary[word.downcase]
+<<<<<<< HEAD
+=======
     else
       word
     end
   end
+  str_array.join(" ")
+end
+
+
+def bulk_tweet_shortener(arr_tweets)
+  arr_tweets.map do |word|
+    puts word_substituter(word)
+  end
+end
+
+def selective_tweet_shortener(tweet)
+  tweet.split(" ").map do |word|
+    if word.length > 140
+      word_substituter(word)
+    else word.length <= 140
+      word
+    end
+  end
+end
+
+
+def shortened_tweet_truncator(tweet)
+  new_tweet =tweet.split(" ").map do |word|
+    if word.length > 140 
+      word_substituter(word)+"..."
+>>>>>>> 59da52c1ca134dc2198aa223e0a8e869b0fe3914
+    else
+      word
+    end
+  end
+<<<<<<< HEAD
   str_array.join(" ")
 end
 
@@ -59,4 +92,7 @@ def shortened_tweet_truncator(tweet)
   else
     tweet
   end
+=======
+  new_tweet.join(" ")
+>>>>>>> 59da52c1ca134dc2198aa223e0a8e869b0fe3914
 end
